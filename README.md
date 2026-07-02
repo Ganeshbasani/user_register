@@ -2,217 +2,318 @@
 
 # 🚀 AWS Serverless User Registration & Login System
 
-<p>
-A secure, scalable, and serverless authentication system built using AWS cloud services. This project demonstrates how modern web applications can implement user registration and login using AWS Lambda, API Gateway, DynamoDB, and Amazon S3 without managing traditional servers.
-</p>
+![AWS](https://img.shields.io/badge/AWS-Serverless-orange?style=for-the-badge&logo=amazonaws)
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![AWS Lambda](https://img.shields.io/badge/AWS-Lambda-FF9900?style=for-the-badge&logo=awslambda)
+![API Gateway](https://img.shields.io/badge/API-Gateway-7B42BC?style=for-the-badge)
+![DynamoDB](https://img.shields.io/badge/DynamoDB-NoSQL-4053D6?style=for-the-badge&logo=amazondynamodb)
+![Amazon S3](https://img.shields.io/badge/Amazon-S3-569A31?style=for-the-badge&logo=amazons3)
+![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
 
-![AWS](https://img.shields.io/badge/AWS-Cloud-orange)
-![Lambda](https://img.shields.io/badge/AWS-Lambda-yellow)
-![API Gateway](https://img.shields.io/badge/API-Gateway-red)
-![DynamoDB](https://img.shields.io/badge/DynamoDB-NoSQL-blue)
-![S3](https://img.shields.io/badge/Amazon-S3-green)
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![License](https://img.shields.io/badge/License-MIT-success)
+### 🔐 Secure • Scalable • Cloud-Native Authentication System
 
-</div>
+*A modern authentication system built using AWS Serverless technologies to provide secure user registration and login without managing backend servers.*
 
 ---
 
-# 📌 Overview
+</div>
 
-This project is a cloud-native authentication system that enables users to securely register and log in through a responsive web interface. It leverages AWS Serverless technologies to provide high availability, scalability, and cost efficiency without managing backend infrastructure.
+# 📖 Overview
 
-The application follows a REST-based architecture where the frontend communicates with AWS Lambda functions through API Gateway, and user information is securely stored in DynamoDB.
+The **AWS Serverless User Registration & Login System** is a cloud-native authentication application that enables users to securely register and log into a web application using AWS services.
+
+Instead of using traditional backend servers, the application leverages **AWS Lambda**, **Amazon API Gateway**, **Amazon DynamoDB**, and **Amazon S3** to create a scalable, highly available, and cost-effective authentication platform.
+
+This project demonstrates modern cloud architecture, REST API integration, serverless computing, and frontend-backend communication.
 
 ---
 
 # ✨ Features
 
 - 👤 User Registration
-- 🔐 Secure User Login
-- ☁️ Fully Serverless Architecture
-- ⚡ Fast REST API using API Gateway
-- 🗄️ DynamoDB Database Integration
-- 🌐 Static Website Hosting on Amazon S3
-- 📱 Responsive Frontend
-- 📊 Scalable Cloud Infrastructure
-- 🔒 Secure API Communication
-- 📜 CloudWatch Logging Support
+- 🔐 Secure Login Authentication
+- ☁️ Fully Serverless Backend
+- ⚡ REST API Integration
+- 🗄️ Amazon DynamoDB Database
+- 🌐 Static Website Hosting using Amazon S3
+- 📱 Responsive User Interface
+- 📊 CloudWatch Logging
+- 🔒 IAM Security
+- 📈 Auto Scaling
+- 💰 Cost Efficient Architecture
 
 ---
 
-# 🏗️ Architecture
+# 🏗️ Solution Architecture
 
-```
-                    User
-                      │
-                      ▼
-          Frontend (HTML, CSS, JavaScript)
-                      │
-                      ▼
-              Amazon API Gateway
-                      │
-          ┌───────────┴───────────┐
-          ▼                       ▼
- Registration Lambda        Login Lambda
-          │                       │
-          └───────────┬───────────┘
-                      ▼
-                Amazon DynamoDB
+```text
+                        User
+                          │
+                          ▼
+        ┌────────────────────────────┐
+        │ HTML • CSS • JavaScript UI │
+        └────────────────────────────┘
+                          │
+                          ▼
+                 Amazon API Gateway
+                          │
+              ┌───────────┴───────────┐
+              ▼                       ▼
+      Register Lambda          Login Lambda
+              │                       │
+              └───────────┬───────────┘
+                          ▼
+                  Amazon DynamoDB
 ```
 
 ---
 
-# 🛠️ Technology Stack
+# 📸 Application Preview
 
-| Category | Technologies |
-|----------|--------------|
-| Frontend | HTML, CSS, JavaScript |
+> Place the following screenshots inside the **screenshots/** folder.
+
+## 🏠 Home Page
+
+![Home](screenshots/home.png)
+
+---
+
+## 📝 Registration Page
+
+![Register](screenshots/register.png)
+
+---
+
+## 🔑 Login Page
+
+![Login](screenshots/login.png)
+
+---
+
+## ✅ Registration Successful
+
+![Success](screenshots/success.png)
+
+---
+
+## 📊 User Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+## 📱 Mobile Responsive View
+
+![Mobile](screenshots/mobile.png)
+
+---
+
+# ⚙️ Technology Stack
+
+| Category | Technology |
+|----------|------------|
+| Frontend | HTML5, CSS3, JavaScript |
 | Backend | Python |
-| Cloud Platform | AWS |
+| Cloud Platform | Amazon Web Services |
 | Compute | AWS Lambda |
-| API | API Gateway |
-| Database | DynamoDB |
+| API | Amazon API Gateway |
+| Database | Amazon DynamoDB |
 | Storage | Amazon S3 |
-| Monitoring | CloudWatch |
+| Monitoring | Amazon CloudWatch |
+| Security | AWS IAM |
 
 ---
 
-# 📁 Project Structure
+# ☁️ AWS Services Used
 
-```
+| Service | Description |
+|----------|-------------|
+| AWS Lambda | Executes backend business logic |
+| API Gateway | Exposes REST API endpoints |
+| DynamoDB | Stores user credentials |
+| Amazon S3 | Hosts frontend website |
+| IAM | Access & Permission Management |
+| CloudWatch | Logs and Monitoring |
+
+---
+
+# 📂 Project Structure
+
+```text
 aws_register_login/
 
 ├── backend/
-│   ├── Register Lambda
-│   ├── Login Lambda
-│   └── Backend Logic
+│   ├── register.py
+│   ├── login.py
+│   ├── requirements.txt
+│   └── utils.py
 │
 ├── frontend/
-│   ├── Login Page
-│   ├── Registration Page
-│   ├── CSS
-│   └── JavaScript
+│   ├── index.html
+│   ├── register.html
+│   ├── login.html
+│   ├── css/
+│   └── js/
 │
 ├── infrastructure/
-│   ├── Deployment Files
-│   ├── Cloud Resources
-│   └── Configuration
+│   ├── template.yaml
+│   ├── deployment.yml
+│   └── cloudformation/
 │
 ├── screenshots/
-│   └── Project Screenshots
+│   ├── home.png
+│   ├── register.png
+│   ├── login.png
+│   ├── success.png
+│   ├── dashboard.png
+│   └── mobile.png
 │
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-# ⚙️ Workflow
+# 🔄 Application Workflow
 
-```
+```text
 User Opens Website
         │
         ▼
-Registration/Login Form
+Registration / Login Form
         │
         ▼
-API Gateway
+Amazon API Gateway
         │
         ▼
-AWS Lambda
+AWS Lambda Function
         │
         ▼
-DynamoDB
+Amazon DynamoDB
         │
         ▼
-Success Response
+Store / Retrieve User Information
         │
         ▼
-User Logged In
+Return Response
+        │
+        ▼
+Display Success or Login Result
 ```
 
 ---
 
-# 🔐 Security Highlights
+# 🔒 Security Features
 
+- Secure REST APIs
 - Input Validation
-- REST API Architecture
 - AWS IAM Role-Based Permissions
-- Serverless Security Model
-- Secure Data Storage
+- Serverless Security Architecture
 - CloudWatch Monitoring
+- Error Handling
+- Scalable Infrastructure
 
 ---
 
-# 🚀 Key Benefits
+# 📊 Key Features
 
-- Fully Serverless
-- Cost Effective
-- Highly Scalable
-- Easy Deployment
-- Minimal Infrastructure Management
-- Cloud-Native Design
-- Production-Ready Architecture
-
----
-
-# 📸 Screenshots
-
-Add screenshots of:
-
-- 🏠 Home Page
-- 📝 Registration Page
-- 🔑 Login Page
-- ✅ Successful Registration
-- ☁️ AWS Lambda
-- 🌐 API Gateway
-- 🗄️ DynamoDB Table
-- 📊 AWS Console
+| Feature | Status |
+|----------|:------:|
+| User Registration | ✅ |
+| User Login | ✅ |
+| REST APIs | ✅ |
+| AWS Lambda | ✅ |
+| DynamoDB | ✅ |
+| Amazon S3 Hosting | ✅ |
+| Responsive UI | ✅ |
+| Cloud Deployment | ✅ |
 
 ---
 
-# 🌟 Future Enhancements
+# 📈 Benefits
+
+- 🚀 Fully Serverless
+- ⚡ High Performance
+- 📈 Automatic Scaling
+- 💰 Low Operational Cost
+- 🔐 Secure Authentication
+- ☁️ Cloud Native
+- 🛠 Easy Deployment
+- 🌍 Highly Available
+
+---
+
+# 🚀 Future Enhancements
 
 - JWT Authentication
 - Password Encryption
-- Email Verification
 - Forgot Password
+- Email Verification
 - OTP Authentication
 - AWS Cognito Integration
-- User Dashboard
-- Admin Panel
-- Docker Support
+- Admin Dashboard
+- User Profile Management
+- Docker Deployment
+- Terraform Support
 - CI/CD Pipeline
+- Multi-Factor Authentication (MFA)
 
 ---
 
-# 🎯 Learning Outcomes
+# 📚 Learning Outcomes
 
-This project demonstrates practical knowledge of:
+This project demonstrates hands-on experience with:
 
 - AWS Serverless Computing
 - REST API Development
-- Cloud Architecture
-- Backend Development
-- Frontend Integration
-- NoSQL Database Design
-- Authentication Workflow
 - Cloud Deployment
+- DynamoDB Integration
+- Lambda Functions
+- API Gateway
+- Frontend & Backend Integration
+- Cloud Security
+- Authentication Systems
+
+---
+
+# 🛠️ Installation
+
+```bash
+# Clone Repository
+
+git clone https://github.com/Ganeshbasani/aws_register_login.git
+
+# Move into project
+
+cd aws_register_login
+```
+
+Deploy:
+
+- Upload Lambda Functions
+- Create API Gateway
+- Configure DynamoDB Table
+- Upload Frontend to Amazon S3
+- Access the Hosted Website
 
 ---
 
 # 👨‍💻 Author
 
-**Ganesh Basani**
+## Ganesh Basani
 
-B.Tech Computer Science & Engineering
+**B.Tech – Computer Science & Engineering**
 
-GitHub: https://github.com/Ganeshbasani
+🌟 Aspiring Software Engineer | Cloud & Full Stack Developer
+
+**GitHub:** https://github.com/Ganeshbasani
 
 ---
 
 <div align="center">
 
-⭐ If you found this project helpful, consider giving it a star!
+## ⭐ Star this repository if you found it useful!
+
+### Built with ❤️ using AWS Serverless Technologies
 
 </div>
